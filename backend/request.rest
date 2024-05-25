@@ -1,0 +1,28 @@
+Visi-misi
+###
+GET http://localhost:8000/visi-misi
+
+###
+POST http://localhost:8000/visi-misi
+Content-Type: application/json
+
+{
+    "visi": "samsat bagus",
+    "misi": "amban amban amban"
+}
+Ucapan Samsat
+###
+GET http://localhost:8000/news
+
+###
+POST http://localhost:8000/news
+Content-Type: application/json
+
+{
+  "news_title": "Judul Berita",
+  "news_content": "Konten berita ini bisa berisi teks dan HTML.",
+  "publication_date": "2024-05-24",
+  "news_source": "wwwwwwww",
+  "category": "Kategori Berita",
+  "news_image": "sjshshsh.jpg"
+}

@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-function Navbar() {
+function Navbar({ activeComponent }) {
   return (
     <div className="container-fluid position-relative p-0">
       <nav className="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
@@ -25,19 +25,47 @@ function Navbar() {
         </button>
         <div className="collapse navbar-collapse" id="navbarCollapse">
           <div className="navbar-nav ms-auto py-0">
-            <Link to="/" className="nav-item nav-link active">
-              Home
+            <Link
+              to="/"
+              className={`nav-item nav-link text-black ${
+                activeComponent === "Beranda" ? "active" : ""
+              }`}
+            >
+              Beranda
             </Link>
-            <Link to="/about" className="nav-item nav-link">
-              About
+            <Link
+              to="/about"
+              className={`nav-item nav-link text-black ${
+                activeComponent === "Tentang" ? "active" : ""
+              }`}
+            >
+              Tentang
             </Link>
-            <a href="service.html" className="nav-item nav-link">
-              Services
-            </a>
-            <a href="package.html" className="nav-item nav-link">
-              Packages
-            </a>
             <div className="nav-item dropdown">
+              <a
+                href="#"
+                className={`nav-link dropdown-toggle ${
+                  activeComponent === "Informasi" ? "active" : ""
+                }`}
+                data-bs-toggle="dropdown"
+              >
+                Informasi
+              </a>
+              <div className="dropdown-menu m-0">
+                <Link to="/berita" className="dropdown-item">
+                  Beritan/Pengumuman
+                </Link>
+
+                <Link to="/pendaftaran" className="dropdown-item">
+                  Pendaftaran
+                </Link>
+                <Link to="/pelayanan" className="dropdown-item">
+                  Pelayanan
+                </Link>
+              </div>
+            </div>
+
+            {/* <div className="nav-item dropdown">
               <a
                 href="#"
                 className="nav-link dropdown-toggle"
@@ -47,7 +75,7 @@ function Navbar() {
               </a>
               <div className="dropdown-menu m-0">
                 <a href="destination.html" className="dropdown-item">
-                  Destination
+                  Sarana dan Prasarana
                 </a>
                 <a href="booking.html" className="dropdown-item">
                   Booking
@@ -62,12 +90,17 @@ function Navbar() {
                   404 Page
                 </a>
               </div>
-            </div>
-            <a href="contact.html" className="nav-item nav-link">
+            </div> */}
+            <Link
+              to="/contact"
+              className={`nav-item nav-link text-black ${
+                activeComponent === "Contact" ? "active" : ""
+              }`}
+            >
               Contact
-            </a>
+            </Link>
           </div>
-          <a href="" className="btn btn-primary rounded-pill py-2 px-4">
+          <a href="" className="btn btn-primary  rounded-pill py-2 px-4">
             Login
           </a>
         </div>

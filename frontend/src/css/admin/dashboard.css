@@ -1,0 +1,16 @@
+#sidebar {
+  width: 250px; /* Atur lebar sidebar */
+  position: fixed; /* Tetapkan posisi tetap di sebelah kiri */
+  height: 100%; /* Panjang penuh */
+  background-color: #343a40; /* Warna latar belakang */
+  color: white; /* Warna teks */
+}
+
+#content {
+  margin-left: 250px; /* Beri ruang sebesar lebar sidebar */
+  padding: 20px; /* Beri padding untuk konten utama */
+}
+
+.page_title h2 {
+  margin-top: 55px; /* Beri jarak dari atas */
+}
