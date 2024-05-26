@@ -18,6 +18,8 @@ function BeritaAdmin() {
   const [newsImageUrl, setNewsImageUrl] = useState("");
   const [newsList, setNewsList] = useState([]);
   const [editId, setEditId] = useState(null);
+  const [showConfirmDelete, setShowConfirmDelete] = useState(false);
+  const [deleteId, setDeleteId] = useState(null);
 
   const handleShowModal = () => setShowModal(true);
   const handleCloseModal = () => {
@@ -90,7 +92,7 @@ function BeritaAdmin() {
     formData.append("news_title", newsTitle);
     formData.append("news_content", newsContent);
     formData.append("publication_date", publicationDate);
-    formData.append("news_source", newsSource); // don't parse to integer
+    formData.append("news_source", newsSource);
     formData.append("category", category);
     formData.append("news_image", newsImage);
 
@@ -137,6 +139,33 @@ function BeritaAdmin() {
     }
   };
 
+  const handleDelete = async (id) => {
+    try {
+      await axios.delete(`http://localhost:8000/news/${id}`);
+      fetchNews();
+    } catch (error) {
+      console.error(
+        "Error deleting data:",
+        error.response ? error.response.data : error.message
+      );
+    }
+  };
+
+  const handleShowConfirmDelete = (id) => {
+    setDeleteId(id);
+    setShowConfirmDelete(true);
+  };
+
+  const handleCloseConfirmDelete = () => {
+    setDeleteId(null);
+    setShowConfirmDelete(false);
+  };
+
+  const handleConfirmDelete = () => {
+    handleDelete(deleteId);
+    handleCloseConfirmDelete();
+  };
+
   return (
     <div className="dashboard dashboard_1">
       <div className="full_container">
@@ -156,9 +185,6 @@ function BeritaAdmin() {
                   <tr>
                     <th>#</th>
                     <th>Judul</th>
-                    {/* <th>Isi</th> */}
-                    {/* <th>Tanggal Publikasi</th> */}
-                    {/* <th>Sumber</th> */}
                     <th>Kategori</th>
                     <th>Gambar</th>
                     <th>Aksi</th>
@@ -169,11 +195,6 @@ function BeritaAdmin() {
                     <tr key={news.news_id}>
                       <td>{index + 1}</td>
                       <td>{news.news_title}</td>
-                      {/* <td
-                        dangerouslySetInnerHTML={{ __html: news.news_content }}
-                      ></td> */}
-                      {/* <td>{news.publication_date}</td> */}
-                      {/* <td>{news.news_source}</td> */}
                       <td>{news.category}</td>
                       <td>
                         <img
@@ -188,6 +209,13 @@ function BeritaAdmin() {
                           onClick={() => handleShowEditModal(news)}
                         >
                           Edit
+                        </Button>
+                        <Button
+                          variant="danger"
+                          onClick={() => handleShowConfirmDelete(news.news_id)}
+                          style={{ marginLeft: "10px" }}
+                        >
+                          Delete
                         </Button>
                       </td>
                     </tr>
@@ -281,20 +309,19 @@ function BeritaAdmin() {
                       <Form.Control
                         type="file"
                         onChange={handleNewsImageChange}
+                        accept="image/*"
                         required
                       />
                       {newsImageUrl && (
-                        <div>
-                          <img
-                            src={newsImageUrl}
-                            alt="preview"
-                            style={{ width: "100px", marginTop: "10px" }}
-                          />
-                        </div>
+                        <img
+                          src={newsImageUrl}
+                          alt="Preview"
+                          style={{ width: "100px", marginTop: "10px" }}
+                        />
                       )}
                     </Form.Group>
                     <Button variant="primary" type="submit">
-                      Simpan
+                      Tambah
                     </Button>
                   </Form>
                 </Modal.Body>
@@ -386,18 +413,14 @@ function BeritaAdmin() {
                       <Form.Control
                         type="file"
                         onChange={handleNewsImageChange}
+                        accept="image/*"
                       />
-                      <Form.Text className="text-muted">
-                        Kosongkan jika tidak ingin mengubah gambar.
-                      </Form.Text>
                       {newsImageUrl && (
-                        <div>
-                          <img
-                            src={newsImageUrl}
-                            alt="preview"
-                            style={{ width: "100px", marginTop: "10px" }}
-                          />
-                        </div>
+                        <img
+                          src={newsImageUrl}
+                          alt="Preview"
+                          style={{ width: "100px", marginTop: "10px" }}
+                        />
                       )}
                     </Form.Group>
                     <Button variant="primary" type="submit">
@@ -405,6 +428,26 @@ function BeritaAdmin() {
                     </Button>
                   </Form>
                 </Modal.Body>
+              </Modal>
+
+              <Modal show={showConfirmDelete} onHide={handleCloseConfirmDelete}>
+                <Modal.Header closeButton>
+                  <Modal.Title>Konfirmasi Hapus</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                  Apakah Anda yakin ingin menghapus berita ini?
+                </Modal.Body>
+                <Modal.Footer>
+                  <Button
+                    variant="secondary"
+                    onClick={handleCloseConfirmDelete}
+                  >
+                    Batal
+                  </Button>
+                  <Button variant="danger" onClick={handleConfirmDelete}>
+                    Hapus
+                  </Button>
+                </Modal.Footer>
               </Modal>
             </div>
           </div>

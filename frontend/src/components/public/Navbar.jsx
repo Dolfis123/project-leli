@@ -97,12 +97,12 @@ function Navbar({ activeComponent }) {
                 activeComponent === "Contact" ? "active" : ""
               }`}
             >
-              Contact
+              Kontak
             </Link>
           </div>
-          <a href="" className="btn btn-primary  rounded-pill py-2 px-4">
+          <Link to="/login" className="btn btn-primary  rounded-pill py-2 px-4">
             Login
-          </a>
+          </Link>
         </div>
       </nav>
     </div>

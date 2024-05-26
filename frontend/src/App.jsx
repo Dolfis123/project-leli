@@ -14,6 +14,7 @@ import Contact from "./pages/public/Contact";
 import Berita from "./pages/public/Berita";
 import BeritaAdmin from "./pages/admin/BeritaAdmin";
 import BeritaDetail from "./pages/public/BeritaDetail";
+import Login from "./pages/admin/Login";
 
 function App() {
   return (
@@ -28,6 +29,8 @@ function App() {
           <Route path="/pelayanan" element={<Pelayanan />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/berita/:hashed_id" element={<BeritaDetail />} />
+          <Route path="/login" element={<Login />} />
+
           {/* Part Umum End */}
           {/* Part Dashboard Start */}
           <Route path="/dashboard" element={<Dashboard />} />

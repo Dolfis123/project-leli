@@ -38,112 +38,51 @@ function Sidebar() {
           <ul className="list-unstyled components">
             <li>
               <Link to="/dashboard">
-                <i className="fa fa-dashboard yellow_color"></i>
+                <i className="fa fa-tachometer"></i>
                 <span>Dashboard</span>
               </Link>
             </li>
 
             <li>
-              <a
-                href="#element"
-                data-toggle="collapse"
-                aria-expanded="false"
-                className="dropdown-toggle"
-              >
-                <i className="fa fa-diamond purple_color"></i>
-                <span>Halaman</span>
-              </a>
-              <ul className="collapse list-unstyled" id="element">
-                <li>
-                  <Link to="/beranda-admin">
-                    <span>Beranda</span>
-                  </Link>
-                </li>
-                <li>
-                  <Link to={"/sejarah-admin"}>
-                    <span>Sejarah</span>
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/visi-misi-admin">
-                    <span>Visi-Misi</span>
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/berita-admin">
-                    <span>Berita</span>
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/pendaftaran-admin">
-                    <span>Pendaftaran</span>
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/pelayanan-admin">
-                    <span>Pelayanan</span>
-                  </Link>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <a href="tables.html">
+              <Link to="/beranda-admin">
                 <i className="fa fa-table purple_color2"></i>
-                <span>Tables</span>
-              </a>
+                <span>Beranda</span>
+              </Link>
             </li>
             <li>
-              <a
-                href="#apps"
-                data-toggle="collapse"
-                aria-expanded="false"
-                className="dropdown-toggle"
-              >
+              <Link to="/sejarah-admin">
                 <i className="fa fa-object-group blue2_color"></i>
-                <span>Apps</span>
-              </a>
-              <ul className="collapse list-unstyled" id="apps">
-                <li>
-                  <a href="email.html">
-                    {" "}
-                    <span>Email</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="calendar.html">
-                    {" "}
-                    <span>Calendar</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="media_gallery.html">
-                    {" "}
-                    <span>Media Gallery</span>
-                  </a>
-                </li>
-              </ul>
+                <span>Sejarah</span>
+              </Link>
             </li>
+
             <li>
-              <a href="price.html">
+              <Link to="/visi-misi-admin">
                 <i className="fa fa-briefcase blue1_color"></i>
-                <span>Pricing Tables</span>
-              </a>
+                <span>Visi/Misi</span>
+              </Link>
             </li>
             <li>
-              <a href="contact.html">
+              <Link to="/berita-admin">
                 <i className="fa fa-paper-plane red_color"></i>
-                <span>Contact</span>
-              </a>
+                <span>Berita</span>
+              </Link>
             </li>
 
             <li>
-              <a href="map.html">
-                <i className="fa fa-map purple_color2"></i> <span>Map</span>
-              </a>
+              <Link to="/pendaftaran-admin">
+                <i className="fa fa-map purple_color2"></i>{" "}
+                <span>Pendaftaran</span>
+              </Link>
+            </li>
+            <li>
+              <Link to="/pelayanan-admin">
+                <i className="fa fa-server"></i> <span>Pelayanan</span>
+              </Link>
             </li>
 
             <li>
-              <a href="settings.html">
+              <a href="#">
                 <i className="fa fa-cog yellow_color"></i>
                 <span>Settings</span>
               </a>
@@ -178,18 +117,18 @@ function Sidebar() {
                       <span className="name_user">Admin</span>
                     </a>
                     <div className="dropdown-menu">
-                      <a className="dropdown-item" href="profile.html">
+                      <a className="dropdown-item" href="#">
                         My Profile
                       </a>
-                      <a className="dropdown-item" href="settings.html">
+                      <a className="dropdown-item" href="#">
                         Settings
                       </a>
-                      <a className="dropdown-item" href="help.html">
+                      <a className="dropdown-item" href="#">
                         Help
                       </a>
-                      <a className="dropdown-item" href="#">
+                      <Link className="dropdown-item" to="/">
                         <span>Log Out</span> <i className="fa fa-sign-out"></i>
-                      </a>
+                      </Link>
                     </div>
                   </li>
                 </ul>

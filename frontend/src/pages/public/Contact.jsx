@@ -23,17 +23,12 @@ function Contact() {
         <div class="container">
           <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
             <h6 class="section-title bg-white text-center text-primary px-3">
-              Contact Us
+              Kontak Kami
             </h6>
             <h1 class="mb-5">Hubungi Kami</h1>
           </div>
           <div class="row g-4">
             <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-              <h5>Get In Touch</h5>
-              <p class="mb-4">
-                Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit.
-                Aliqu diam amet diam et eos
-              </p>
               <div class="d-flex align-items-center mb-4">
                 <div
                   class="d-flex align-items-center justify-content-center flex-shrink-0 bg-primary"
@@ -43,7 +38,10 @@ function Contact() {
                 </div>
                 <div class="ms-3">
                   <h5 class="text-primary">Office</h5>
-                  <p class="mb-0">123 Street, New York, USA</p>
+                  <p class="mb-0">
+                    43P5+2PR, Jln. Karya Abri, Sanggeng, Kec. Manokwari Bar.,
+                    Kabupaten Manokwari, Papua Bar. 98312
+                  </p>
                 </div>
               </div>
               <div class="d-flex align-items-center mb-4">
@@ -55,7 +53,7 @@ function Contact() {
                 </div>
                 <div class="ms-3">
                   <h5 class="text-primary">Mobile</h5>
-                  <p class="mb-0">+012 345 67890</p>
+                  <p class="mb-0">081343349747</p>
                 </div>
               </div>
               <div class="d-flex align-items-center">
@@ -67,7 +65,7 @@ function Contact() {
                 </div>
                 <div class="ms-3">
                   <h5 class="text-primary">Email</h5>
-                  <p class="mb-0">info@example.com</p>
+                  <p class="mb-0">samsat@gmail.com</p>
                 </div>
               </div>
             </div>

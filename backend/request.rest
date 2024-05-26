@@ -26,3 +26,12 @@ Content-Type: application/json
   "category": "Kategori Berita",
   "news_image": "sjshshsh.jpg"
 }
+
+###
+POST http://localhost:8000/regis
+Content-Type: application/json
+
+{
+  "email": "admin",
+  "password": "admin"
+}
