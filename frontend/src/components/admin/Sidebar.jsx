@@ -117,15 +117,6 @@ function Sidebar() {
                       <span className="name_user">Admin</span>
                     </a>
                     <div className="dropdown-menu">
-                      <a className="dropdown-item" href="#">
-                        My Profile
-                      </a>
-                      <a className="dropdown-item" href="#">
-                        Settings
-                      </a>
-                      <a className="dropdown-item" href="#">
-                        Help
-                      </a>
                       <Link className="dropdown-item" to="/">
                         <span>Log Out</span> <i className="fa fa-sign-out"></i>
                       </Link>

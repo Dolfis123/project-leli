@@ -57,7 +57,7 @@ function Beranda() {
               </div>
               <div className="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
                 <h1 className="mb-4">
-                  Ucapana dari <span className="text-primary">Samsat</span>
+                  <span className="text-primary">Samsat Manokwari</span>
                 </h1>
                 <p
                   className="mb-4"

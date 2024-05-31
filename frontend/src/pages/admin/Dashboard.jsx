@@ -17,7 +17,7 @@ function Dashboard() {
                     </div>
                   </div>
                 </div>
-                <div className="row column1">
+                {/* <div className="row column1">
                   <div className="col-md-6 col-lg-3">
                     <div className="full counter_section margin_bottom_30">
                       <div className="couter_icon">
@@ -78,7 +78,7 @@ function Dashboard() {
                       </div>
                     </div>
                   </div>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>

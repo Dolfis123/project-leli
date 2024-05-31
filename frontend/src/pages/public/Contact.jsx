@@ -37,7 +37,7 @@ function Contact() {
                   <i class="fa fa-map-marker-alt text-white"></i>
                 </div>
                 <div class="ms-3">
-                  <h5 class="text-primary">Office</h5>
+                  <h5 class="text-primary">Kantor</h5>
                   <p class="mb-0">
                     43P5+2PR, Jln. Karya Abri, Sanggeng, Kec. Manokwari Bar.,
                     Kabupaten Manokwari, Papua Bar. 98312
@@ -52,7 +52,7 @@ function Contact() {
                   <i class="fa fa-phone-alt text-white"></i>
                 </div>
                 <div class="ms-3">
-                  <h5 class="text-primary">Mobile</h5>
+                  <h5 class="text-primary">Hubungi</h5>
                   <p class="mb-0">081343349747</p>
                 </div>
               </div>

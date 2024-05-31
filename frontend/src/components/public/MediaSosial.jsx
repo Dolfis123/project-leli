@@ -83,12 +83,7 @@ function MediaSosial() {
             )}
           </div>
         ))}
-        <h5
-          className="text-center"
-          style={{ marginTop: "30px", color: "#0F0F0F" }}
-        >
-          Kepala Lurah: xxxxxxxxxxxxxxx
-        </h5>
+
         <div className="card-body">
           {/* List Berita Kecil di Dalam Card Panjang */}
           <ul className="list-group">
